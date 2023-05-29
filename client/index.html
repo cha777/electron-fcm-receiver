@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js
+    <script>
+      document.write(window.electron.Versions.node());
+    </script>
+    , Chromium
+    <script>
+      document.write(window.electron.Versions.chrome());
+    </script>
+    , and Electron
+    <script>
+      document.write(window.electron.Versions.electron());
+    </script>
+    .
+
+    <button
+      id="subscribe"
+      disabled
+    >
+      Subscribe
+    </button>
+    <button
+      id="receive"
+      disabled
+    >
+      Receive Sample
+    </button>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
