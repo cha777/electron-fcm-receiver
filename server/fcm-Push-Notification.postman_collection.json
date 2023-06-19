@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "c3289a9d-08f3-41b6-8193-5252c796b076",
+		"name": "fcm-Push-Notification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16302435",
+		"_collection_link": "https://orange-escape-849248.postman.co/workspace/DirectFN~c3822c3c-a42a-4e46-a380-82a9e2c517b6/collection/16302435-c3289a9d-08f3-41b6-8193-5252c796b076?action=share&creator=16302435&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "express-server-registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{FCM_CLIENT_PUSH_TOKEN}}\",\n    \"pdm\": 61\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/notification/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"notification",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express-server-send-basic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/notification/send-basic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"notification",
+						"send-basic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express-server-send-advanced",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/notification/send-advanced",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"notification",
+						"send-advanced"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "FCM_CLIENT_PUSH_TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
