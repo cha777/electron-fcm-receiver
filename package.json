@@ -1,5 +1,5 @@
 {
-  "name": "electron-fcm-demo",
+  "name": "electron-fcm-receiver-poc",
   "version": "1.0.0",
   "description": "A demo FCM client",
   "keywords": [
