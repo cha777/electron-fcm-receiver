@@ -25,9 +25,15 @@ app.get('/', (req, res) => {
 
 app.post('/notification/register', (req, res) => {
     const { token, pdm } = req.body;
-    console.log('Registering token', token);
-    tokens.push(token);
-    res.status(200).send('Device registered successfully !');
+
+    if (tokens.includes(token)) {
+        console.log('Token already registered');
+        res.status(200).send('Token already registered');
+    } else {
+        console.log('Registering token', token);
+        tokens.push(token);
+        res.status(200).send('Device registered successfully !');
+    }
 });
 
 app.get('/notification/send-basic', (_, res) => {
@@ -63,7 +69,7 @@ app.get('/notification/send-basic', (_, res) => {
         .sendEachForMulticast(payload)
         .then((result) => {
             console.log(result);
-            res.status(200).send('Message successfully sent !');
+            res.status(200).send(result);
         })
         .catch((error) => {
             console.error(error);
