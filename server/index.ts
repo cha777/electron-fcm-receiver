@@ -41,6 +41,15 @@ app.get('/notification/send-basic', (_, res) => {
 
     const payload: MulticastMessage = {
         tokens: tokens,
+        data: {
+            condition: 'BREAK',
+            customText: 'My test chart alert',
+            sound: 'sound-1',
+            alertId: '5',
+            time: '1685964430',
+            triggerType: 'ONCROSS',
+            value: '28.65'
+        },
         notification: {
             title: 'ALERT: Crossing Trend Line',
             body: 'TDWL - 1010, Crossing Trend Line',
