@@ -48,7 +48,8 @@ app.get('/notification/send-basic', (_, res) => {
             alertId: '5',
             time: '1685964430',
             triggerType: 'ONCROSS',
-            value: '28.65'
+            value: '28.65',
+            category: '3'
         },
         notification: {
             title: 'ALERT: Crossing Trend Line',
@@ -99,7 +100,8 @@ app.get('/notification/send-advanced', async (_, res) => {
             body: "You received a message from Pro11"
         },
         data: {
-            htmlContent: htmlContent
+            messageBody: htmlContent,
+            category: '2'
         }
     }
 
